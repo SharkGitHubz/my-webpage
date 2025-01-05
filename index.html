@@ -178,18 +178,26 @@
     </style>
 </head>
 <body>
-    <button>
-        <span class="button-content">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path fill="none" d="M0 0H24V24H0z"></path>
-                <path
-                    fill="currentColor"
-                    d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228z"
-                ></path>
-            </svg>
-            Ukraine
-        </span>
-    </button>
+<button id="ukraine-button">
+    <span class="button-content">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path fill="none" d="M0 0H24V24H0z"></path>
+            <path
+                fill="currentColor"
+                d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228z"
+            ></path>
+        </svg>
+        Ukraine
+    </span>
+</button>
+
+<script>
+    // Add click event listener to the button
+    document.getElementById('ukraine-button').addEventListener('click', function() {
+        // Open the link in a new tab
+        window.open('https://savelife.in.ua/en/', '_blank');
+    });
+</script>
     <div class="container">
         <svg class="shark-logo wave" viewBox="0 0 100 100">
             <path fill="#8ee3ff" d="M50,20 C60,20 70,25 80,40 C90,55 90,70 80,80 C70,90 60,90 50,90 C40,90 30,90 20,80 C10,70 10,55 20,40 C30,25 40,20 50,20 Z"/>
