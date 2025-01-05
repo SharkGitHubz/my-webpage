@@ -1,135 +1,206 @@
-<html><head><base href="." /><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SharkyDoesStuff</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: #0a0a1a;
-        color: #8ee3ff;
-        font-family: 'JetBrains Mono', monospace;
-        line-height: 1.6;
-    }
+<html>
+<head>
+    <base href="." />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SharkyDoesStuff</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a1a;
+            color: #8ee3ff;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.6;
+        }
 
-    .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 2rem;
-    }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
 
-    h1 {
-        font-size: 2.5rem;
-        text-align: center;
-        margin-bottom: 2rem;
-        border-bottom: 2px solid #8ee3ff;
-        padding-bottom: 1rem;
-    }
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #8ee3ff;
+            padding-bottom: 1rem;
+        }
 
-    .shark-logo {
-        width: 100px;
-        height: 100px;
-        margin: 0 auto;
-        display: block;
-    }
+        .shark-logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            display: block;
+        }
 
-    .content, .socials, .projects {
-        background-color: rgba(14, 14, 35, 0.5);
-        padding: 2rem;
-        border-radius: 10px;
-        backdrop-filter: blur(5px);
-        margin-bottom: 2rem;
-    }
+        .content, .socials, .projects {
+            background-color: rgba(14, 14, 35, 0.5);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            margin-bottom: 2rem;
+        }
 
-    p {
-        margin-bottom: 1.5rem;
-    }
+        p {
+            margin-bottom: 1.5rem;
+        }
 
-    .wave {
-        animation: wave 3s ease-in-out infinite;
-        transform-origin: center;
-    }
+        .wave {
+            animation: wave 3s ease-in-out infinite;
+            transform-origin: center;
+        }
 
-    .socials h2, .projects h2 {
-        margin-top: 0;
-        border-bottom: 1px solid #8ee3ff;
-        padding-bottom: 0.5rem;
-    }
+        .socials h2, .projects h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #8ee3ff;
+            padding-bottom: 0.5rem;
+        }
 
-    .social-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
 
-    .social-link {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: #8ee3ff;
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        border: 1px solid #8ee3ff;
-        border-radius: 5px;
-        transition: all 0.3s ease;
-    }
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #8ee3ff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid #8ee3ff;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
 
-    .social-link:hover {
-        background-color: #8ee3ff;
-        color: #0a0a1a;
-    }
+        .social-link:hover {
+            background-color: #8ee3ff;
+            color: #0a0a1a;
+        }
 
-    .project-item {
-        margin-bottom: 1.5rem;
-        cursor: pointer;
-    }
+        .project-item {
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+        }
 
-    .project-name {
-        color: #8ee3ff;
-        font-weight: bold;
-        text-decoration: underline;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-    }
+        .project-name {
+            color: #8ee3ff;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
 
-    .project-dead {
-        color: #ff4444;
-    }
+        .project-dead {
+            color: #ff4444;
+        }
 
-    .project-dead::after {
-        content: "✖";
-        margin-left: 10px;
-        color: #ff4444;
-    }
+        .project-dead::after {
+            content: "✖";
+            margin-left: 10px;
+            color: #ff4444;
+        }
 
-    .project-description {
-        display: none;
-        padding: 1rem;
-        margin-top: 0.5rem;
-        background-color: rgba(14, 14, 35, 0.8);
-        border-radius: 5px;
-    }
+        .project-description {
+            display: none;
+            padding: 1rem;
+            margin-top: 0.5rem;
+            background-color: rgba(14, 14, 35, 0.8);
+            border-radius: 5px;
+        }
 
-    @keyframes wave {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-    }
-</style>
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* From Uiverse.io by cssbuttons-io */
+        button {
+            font-size: 17px;
+            font-family: inherit;
+            font-weight: 700;
+            padding: 4px;
+            border-radius: 20px;
+            cursor: pointer;
+            border: none;
+            color: black;
+            box-shadow:
+                rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+                rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+            background: linear-gradient(
+                0deg,
+                rgba(255, 213, 0, 1) 0%,
+                rgba(255, 213, 0, 1) 47%,
+                rgba(0, 91, 187, 1) 47%,
+                rgba(0, 91, 187, 1) 100%
+            );
+            transition: all 0.1s ease-in-out;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+
+        button:active {
+            transform: translateY(3px);
+            box-shadow:
+                rgba(0, 0, 0, 0.1) 0px 14px 25px -5px,
+                rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        }
+
+        button .button-content {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 0.7em 1.5em;
+            padding-left: 1.2em;
+            border-radius: 16px;
+        }
+
+        button svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 6px;
+            color: #ff0000;
+            transition: transform 0.3s;
+        }
+
+        button:hover svg {
+            transform: scale(1.2);
+        }
+    </style>
 </head>
 <body>
+    <button>
+        <span class="button-content">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path fill="none" d="M0 0H24V24H0z"></path>
+                <path
+                    fill="currentColor"
+                    d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228z"
+                ></path>
+            </svg>
+            Ukraine
+        </span>
+    </button>
     <div class="container">
         <svg class="shark-logo wave" viewBox="0 0 100 100">
             <path fill="#8ee3ff" d="M50,20 C60,20 70,25 80,40 C90,55 90,70 80,80 C70,90 60,90 50,90 C40,90 30,90 20,80 C10,70 10,55 20,40 C30,25 40,20 50,20 Z"/>
             <circle cx="35" cy="45" r="3" fill="#0a0a1a"/>
         </svg>
-        <h1>sharkydoesstuff</h1>
+        <h1>SharkyDoesStuff</h1>
         <div class="content">
-            <p>Welcome! I am sharkydoesstuff!</p>
-            <p>I don't really know what to say here</p>
-            <p>Useless but true fact: This website's font is JetBrains Mono</p>
-            <p>Useless but false fact: This is a useless but true fact!</p>
+            <p>Welcome to my corner of the web! I'm SharkyDoesStuff, and this is my simple, clean space where I share what I do.</p>
+            <p>I believe in keeping things minimalist and functional, just like this website's design. The dark blue background represents the deep ocean, while the light blue text glows like bioluminescence in the depths.</p>
+            <p>This space is built using JetBrains Mono, a beautiful monospace font that perfectly balances readability and style.</p>
+            <p>[ Content in progress - Feel free to tell me what specific information you'd like to add about yourself! ]</p>
         </div>
         <div class="projects">
             <h2>My Projects</h2>
@@ -194,4 +265,5 @@
             });
         });
     </script>
-</body></html>
+</body>
+</html>
